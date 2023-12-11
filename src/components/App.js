@@ -20,14 +20,25 @@ const App = () => {
 
             for(let i=0;i<len;i++){
                if(arr1.indexOf(arr2[i])){
-                arr2 = arr2.splice(i,1)
-                arr1 = arr1.splice(i,1)
+                arr2.splice(i,1)
+                arr1.splice(i,1)
                }
             }  
             
             let total = arr1.length + arr2.length
             total = total%6;
-            setAns(total)
+            if(total == 0)
+                setAns("Siblings")
+            else if(total == 1)
+                setAns("Friends")
+            else if(total == 2)
+                setAns("Love")
+            else if(total == 3)
+                setAns("Affection") 
+            else if(total == 4)
+                setAns("Marriage")
+            else if(total == 5)
+                setAns("Enemy")      
         }
 
         return(
